@@ -1,9 +1,9 @@
-from others import *
+from others import run_all
 
 
-def run_all():
-    print("Running all tasks...")
+if __name__ == '__main__':
+    results = run_all()
+    # Компактный вывод результатов
+    for k, v in results.items():
+        print(f"{k}: {v}")
 
-
-if __name__ == "__main__":
-    run_all()
