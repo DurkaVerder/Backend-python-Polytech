@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Создать пост</h1>
+
+<form method="post" action="/posts/create">
+    <div class="form-group">
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="content">Содержимое:</label>
+        <textarea id="content" name="content" required></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="user_id">Автор:</label>
+        <select id="user_id" name="user_id" required>
+            <option value="">Выберите автора</option>
+            {% for user in users %}
+            <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-success">Создать пост</button>
+    <a href="/posts" class="btn">Отмена</a>
+</form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Добро пожаловать в CRUD приложение</h1>
+
+<div style="display: flex; gap: 20px; margin-top: 30px;">
+    <div style="flex: 1; padding: 20px; background-color: #f8f9fa; border-radius: 8px;">
+        <h2>Пользователи</h2>
+        <p>Управление пользователями системы</p>
+        <a href="/users" class="btn">Просмотреть пользователей</a>
+        <a href="/users/create" class="btn btn-success">Добавить пользователя</a>
+    </div>
+    
+    <div style="flex: 1; padding: 20px; background-color: #f8f9fa; border-radius: 8px;">
+        <h2>Посты</h2>
+        <p>Управление постами пользователей</p>
+        <a href="/posts" class="btn">Просмотреть посты</a>
+        <a href="/posts/create" class="btn btn-success">Добавить пост</a>
+    </div>
+</div>
+
+<div style="margin-top: 40px; padding: 20px; background-color: #e9ecef; border-radius: 8px;">
+    <h3>О приложении</h3>
+    <p>Это веб-приложение демонстрирует базовые CRUD-операции (создание, чтение, обновление, удаление) 
+    для работы с пользователями и их постами, используя FastAPI и SQLAlchemy с базой данных SQLite.</p>
+    
+    <h4>Возможности:</h4>
+    <ul>
+        <li>Создание, редактирование и удаление пользователей</li>
+        <li>Создание, редактирование и удаление постов</li>
+        <li>Связь постов с пользователями</li>
+        <li>Каскадное удаление постов при удалении пользователя</li>
+    </ul>
+</div>
+{% endblock %}
